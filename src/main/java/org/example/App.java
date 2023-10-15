@@ -1,7 +1,8 @@
 package org.example;
 
-import org.example.draw.DrawShape;
-import org.example.draw.DrawSquareShape;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import org.example.module.AppModule;
 import org.example.service.SquareRequest;
 
 /** Dependency Injection! */
@@ -10,8 +11,8 @@ public class App {
 
   private static void sendRequest(String req) {
     if (req.equals(SQUARE_REQ)) {
-      DrawShape drawShape = new DrawSquareShape();
-      SquareRequest squareRequest = new SquareRequest(drawShape);
+      Injector injector = Guice.createInjector(new AppModule());
+      SquareRequest squareRequest = injector.getInstance(SquareRequest.class);
       squareRequest.makeRequest();
     }
   }

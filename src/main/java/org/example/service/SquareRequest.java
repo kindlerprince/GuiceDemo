@@ -1,5 +1,6 @@
 package org.example.service;
 
+import jakarta.inject.Inject;
 import org.example.draw.DrawShape;
 
 /**
@@ -9,6 +10,7 @@ public class SquareRequest {
   private DrawShape drawShape;
 
   // Initializing the dependency DrawShape
+  @Inject
   public SquareRequest(DrawShape drawShape) {
     this.drawShape = drawShape;
   }
