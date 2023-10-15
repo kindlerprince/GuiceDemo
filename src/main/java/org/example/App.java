@@ -7,13 +7,15 @@ import org.example.service.SquareRequest;
 
 /** Dependency Injection! */
 public class App {
-  private static String SQUARE_REQ = "Square Request";
+  private static final String SQUARE_REQ = "Square Request";
 
   private static void sendRequest(String req) {
     if (req.equals(SQUARE_REQ)) {
       Injector injector = Guice.createInjector(new AppModule());
       SquareRequest squareRequest = injector.getInstance(SquareRequest.class);
       squareRequest.makeRequest();
+      SquareRequest squareRequest2 = injector.getInstance(SquareRequest.class);
+      squareRequest2.makeRequest();
     }
   }
 
