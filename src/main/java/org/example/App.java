@@ -24,7 +24,7 @@ public class App {
   }
 
   public static void main(String[] args) {
-    System.out.println("Learning Dependency Injection without Google Guice");
+    System.out.println("Learning Dependency Injection Google Guice");
     sendRequest(SQUARE_REQ);
   }
 }
