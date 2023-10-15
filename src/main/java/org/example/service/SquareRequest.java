@@ -13,9 +13,13 @@ public class SquareRequest {
   @Inject
   public SquareRequest(DrawShape drawShape) {
     this.drawShape = drawShape;
+
   }
 
   public void makeRequest() {
     drawShape.draw();
+  }
+  public DrawShape getDrawShape(){
+    return drawShape;
   }
 }

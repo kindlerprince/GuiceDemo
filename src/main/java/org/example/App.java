@@ -16,6 +16,10 @@ public class App {
       squareRequest.makeRequest();
       SquareRequest squareRequest2 = injector.getInstance(SquareRequest.class);
       squareRequest2.makeRequest();
+
+      // checking singleton is working or not
+      boolean areDrawShapes = squareRequest.getDrawShape() == squareRequest2.getDrawShape();
+      System.out.println("Were draw shapes equal : "+areDrawShapes);
     }
   }
 
